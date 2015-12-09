@@ -42,6 +42,21 @@ Vide arquivos no repo das aulas.
   - https://github.com
   - http://m.xkcd.com/1597/ (diversão)
 
+* LaTeX
+
+Clássico texto 'A not so short introduction to LaTeX':
+
+- https://www.ctan.org/tex-archive/info/lshort/english/?lang=en 
+- https://www.ctan.org/tex-archive/info/lshort/portuguese
+
+- http://www.gnu.org/software/auctex/manual/auctex.pdf
+
+E para quem não conhece também sugiro conhecer o [[http://orgmode.org][Org-Mode]] do
+Emacs. Vale assistir os [[http://orgmode.org/talks.html][vídeos]] sobre ele. E finalmente, um artigo
+mostrando como Orgmode pode ser útil:
+
+http://www.jstatsoft.org/article/view/v046i03
+
 * Sites interessantes 
 
 - https://projecteuler.net

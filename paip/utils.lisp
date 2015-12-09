@@ -203,15 +203,3 @@
 (defun prompt-generator (&optional (num 0) (ctl-string "[~d] "))
   "Return a function that prints prompts like [1], [2], etc."
   #'(lambda () (format t ctl-string (incf num))))
-
-
-(defun rule-based-translator (input rules &key (matcher #'pattern::pat-match)
-					    (rule-if #'first)
-					    (rule-then #'rest)
-					    (action #'sublis))
-  (some #'(lambda (rule)
-	    (let ((result (funcall matcher (funcall rule-if rule)
-				   input)))
-	      (if (not (eq result +fail+))
-		  (funcall action result (funcall rule-then rule)))))
-	rules))

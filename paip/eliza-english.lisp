@@ -163,7 +163,6 @@
     (Do you feel strongly about discussing such things?))))
 
 
-
 (defun switch-viewpoint (words)
   "Change I to you and vice versa, and so on."
   (sublis '((I . you) (you . I) (me . you) (am . are))

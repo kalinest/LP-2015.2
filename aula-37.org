@@ -1,0 +1,16 @@
+#+Title: Aula 37
+#+Date: <2015-11-18 Wed>
+#+Author: Alexandre Rademaker
+
+* Tópicos
+
+Falamos do pull request:
+
+https://github.com/arademaker/LP-2015.2/commit/01619f46c0540c4fb723adabfca967acdd50cd27
+
+Brevemente discutimos o uso de =find-symbol= no pacote =pattern=. 
+
+Dicutimos a seção "search paths" e brevemente as seções seguintes e
+conteúdo do próximo capítulo.
+
+

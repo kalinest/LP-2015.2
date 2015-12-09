@@ -18,8 +18,7 @@
    #:string->list
    #:eql-by-name-if-symbol
    #:interactive-interpreter
-   #:prompt-generator
-   #:rule-based-translator))
+   #:prompt-generator))
 
 (defpackage :chapter-1
   (:use :utils :cl)
@@ -40,33 +39,19 @@
    #:op-preconds
    #:op-action
    #:gps
-   #:use))
+   #:use
+   #:*ops*
+   #:action-p
+   #:member-equal))
 
-(defpackage :gps-test
-  (:use :utils :cl :gps-2))
-
-(defpackage :pattern
+(defpackage :tests-framework
   (:use :cl :utils)
   (:export
-   #:variable-p
-   #:make-binding
-   #:binding-var
-   #:binding-val
-   #:get-binding
-   #:lookup
-   #:extend-bindings
-   #:match-variable
-   #:pat-match
-   #:pat-match-abbrev
-   #:segment-pattern-p))
-
-(defpackage :eliza
-  (:use :cl :utils :pattern)
-  (:export
-   #:eliza))
-
-(defpackage :eliza-test
-  (:use :cl :utils :eliza :pattern))
+   #:deftest
+   #:combine-results
+   #:with-gensyms
+   #:check
+   #:report-result))
 
 (defpackage :search
   (:use :cl :utils)
@@ -79,19 +64,52 @@
    #:breadth-first-search
    #:finite-binary-tree
    #:diff
-   #:best-first-search))
+   #:best-first-search
+   #:beam-search))
 
-(defpackage :testcases-framework
-  (:use :utils :cl :search :eliza :eliza-test)
+(defpackage :search-test
+  (:use :cl :utils :search :tests-framework))
+
+(defpackage :gps-search
+  (:use :cl :utils :search)
   (:export
-   #:deftest
-   #:combine-results
-   #:with-gensyms
-   #:check
-   #:report-result))
+   #:gps-search))
 
-(defpackage :test-search
-  (:use :utils :cl :search :testcases-framework))
-  
-(defpackage :test-pattern
-  (:use :utils :cl :pattern :testcases-framework))
+(defpackage :gps-test
+  (:use :cl :utils :gps-2 :gps-search))
+
+(defpackage :pattern
+  (:use :cl :utils)
+  (:export
+   #:make-binding
+   #:binding-var
+   #:binding-val
+   #:get-binding
+   #:lookup
+   #:extend-bindings
+   #:match-variable
+   #:pat-match
+   #:pat-match-abbrev
+   #:segment-pattern-p
+   #:expand-pat-match-abbrev
+   #:rule-based-translator))
+
+(defpackage :pattern-test
+  (:use :cl :utils :pattern :tests-framework))
+
+(defpackage :eliza
+  (:use :cl :utils :pattern)
+  (:export
+   #:eliza))
+
+(defpackage :eliza-test
+  (:use :cl :utils :eliza :pattern))
+
+(defpackage :student
+  (:use :cl :utils :pattern))
+
+(defpackage :clos
+  (:use :cl :utils))
+
+(defpackage :symbolic-math
+  (:use :cl :utils :pattern))

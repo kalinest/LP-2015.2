@@ -1,5 +1,5 @@
 
-(in-package testcases-framework)
+(in-package :tests-framework)
 
 (defvar *test-name* nil)
 
@@ -26,7 +26,4 @@
      (let ((*test-name* (append *test-name* (list ',name))))
        ,@body)))
 
-(deftest test-paip ()
-  (combine-results
-    (test-search::test-search)
-    (test-pattern::test-pattern)))
+

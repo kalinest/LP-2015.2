@@ -1,7 +1,6 @@
 ;;; Code from Paradigms of Artificial Intelligence Programming
 ;;; Copyright (c) 1991 Peter Norvig
 
-
 (in-package :eliza)
 
 (defparameter +no-bindings+ '((T . T)))
